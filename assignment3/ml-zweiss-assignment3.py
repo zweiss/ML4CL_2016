@@ -484,6 +484,4 @@ if __name__ == '__main__':
     # their accuracy as well as computational complexity.
     # =================================================================================================================
 
-    # Ranking: CNN, Logistic regression, MLP
-    # Computational complexity: Logistic regression, MLP, CNN
-    # cnn takes longer for convergence
+    # please see ml-zweiss-assignment3.pdf
