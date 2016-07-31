@@ -50,7 +50,7 @@ def read_file(input_file):
 
 
 # =====================================================================================================================
-# Task 2: Cargi's methods
+# Task 2: Methods based on Cargi's official solutions for exercise 5.
 # =====================================================================================================================
 
 def mlp_model(input_dimensions, n_out_dim, activation_function):
