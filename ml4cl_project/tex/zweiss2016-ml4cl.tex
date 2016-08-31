@@ -1,0 +1,289 @@
+%
+% File acl2016.tex
+%
+%% Based on the style files for ACL-2015, with some improvements
+%%  taken from the NAACL-2016 style
+%% Based on the style files for ACL-2014, which were, in turn,
+%% Based on the style files for ACL-2013, which were, in turn,
+%% Based on the style files for ACL-2012, which were, in turn,
+%% based on the style files for ACL-2011, which were, in turn, 
+%% based on the style files for ACL-2010, which were, in turn, 
+%% based on the style files for ACL-IJCNLP-2009, which were, in turn,
+%% based on the style files for EACL-2009 and IJCNLP-2008...
+
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{acl2016}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+
+%\usepackage[translate=babel,nogroupskip,nonumberlist]{glossaries}
+\usepackage[style=authoryear-icomp, pagetracker=page, backend=bibtex, doi=false,isbn=false,url=false,dashed=false]{biblatex}
+%\usepackage{gb4e}
+
+% Hyperref 
+%\hypersetup{
+%    colorlinks,
+%    citecolor=black,
+%    filecolor=black,
+%    linkcolor=black,
+%    urlcolor=black
+%}
+%\DeclareMathOperator*{\argmax}{arg\,max}
+%\setlength\titlebox{6.5cm}    % Expanding the titlebox
+%\xpatchbibmacro{cite}{cite:short}{cite:full}{}{}
+
+%% Glosses
+%\setacronymstyle{long-short}
+%\newacronym{sla}{SLA}{Second Language Acquisition}
+%\makenoidxglossaries
+
+% Use '&' instead of ', and' in citations with multiple authors
+\renewcommand*{\finalnamedelim}{%
+   \ifnumgreater{\value{liststop}}{2}{}{}%
+   \addspace\&\space} 
+ 
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+
+
+\aclfinalcopy % Uncomment this line for the final submission
+%\def\aclpaperid{***} %  Enter the acl Paper ID here
+
+%\setlength\titlebox{5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+\newcommand\BibTeX{B{\sc ib}\TeX}
+
+\title{On the Applicability of Features of Linguistic Complexity \\ to the Classification of Political Speeches}
+
+\author{Zarah Weiß \\
+  University of Tübingen \\
+    %Wilhelstraße 19 \\
+  %Affiliation / Address line 3 \\
+  {\tt zweiss@sfs.uni-tuebingen.de} \\}
+
+\bibliography{politics.bib}
+\date{}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+This paper compares the performance of classical word vectors and complexity vectors on the tasks of party and government affiliation identification for political speeches from German \textit{Bundestag} using SVMs with linear kernels. The results show that  BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA 
+\end{abstract}
+
+% 4 pages
+% possible to re-implement based on paper information
+
+\section{Introduction}
+% 0.5 pages
+
+The analysis of political speeches as well as the prediction of party affiliation are common targets of computational linguistic analyses. The goals of these analyses are mainly related to voting behaviour prediction or the detection of ideological stances. 
+
+
+
+
+
+
+\begin{itemize}
+\item Increasing popularity of using linguistic complexity for classification
+\item Proficiency analysis, readability
+\item Also sometimes applied to stylometrics
+\item Here: identifying political affiliation in terms of party and government participation
+\item use of content neutral features
+\item organisation affiliation
+\item political speeches in Bundestag, highly formal language, which is a hybrid between spoken and written language. 
+\item use political speeches for party prediction, since affiliation is very clear
+\item allows for focus on feature investigation
+\end{itemize}
+
+% Motivation
+
+% Question
+Can party affiliation be identified by linguistic complexity measures? That is, are there systematic differences or similarities between how members of parties phrase their discussions? And has being part of the ruling coalition or the opposition an effect on speech style?
+
+This paper tries a novel approach, comparing the performance of classical word vectors with complexity vectors. % on two stylometric classification tasks, namely party affiliation and membership in the ruling coalition on political speeches.
+% Experiment results
+The results show that ... BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA 
+
+% Structure
+The remainder of the paper is structured as follows: first, a brief overview over related work and similar approaches is given. Then, the data set used is introduced. Section \ref{sec:methods} discusses the methods used in the classification experiments and section \ref{sec:exp} reports the experiments. The article closes with the conclusion.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Related Work}
+% 0.5 pages
+
+One common strand in the analysis of political speeches is the analysis of political affiliations of parties or individuals, allowing to estimate similarities between them with respect to certain positions. This is highly related to political science and journalism. These analyses are often relying on word patterns \parencite[cf.][124]{lowe2013}.
+\textcite[][]{lowe2011} identify political affiliation on a continuous left to right scale using political categories assigned to sentences based on their content.
+\textcite[][]{sim2013} are identifying the ideological position of American politicians expressed in their political texts using an ideology lexicon and a Bayesian Hidden Markov Model.
+
+Other research focuses more on the aspect of organisation affiliation: \textcite[][]{dallhof2013}, Koppel 2009
+\textcite[][]{dallhof2013} performs a binary classification of gender, age, and political affiliation based on Swedish parliament speeches from 2003 to 2010 using binary word vectors indicating absence or presence of words.
+\textcite[][]{koppel2009} identify both, ideological and organisational affiliation for Arabic texts.
+
+Party prediction is often performed based on social media data, in order to facilitate the analysis of voting behaviour, see \textcite[][]{gottipati2013}.
+
+\textcite[][]{abu2012} use unsupervised learning methods to identify sub-group affiliation in political fora.
+
+%Abi Jbara 2012
+%\begin{itemize}
+%\item unsupervised methods to identify affiliation sub-groups in political fora
+%\end{itemize}
+%Gottipati 2013
+%\begin{itemize}
+%\item party prediction on social media to analyze voting behaviour on ideological stances
+%\end{itemize}
+%Koppel 2009
+%\begin{itemize}
+%\item identification of organisational affiliation in Arabic texts
+%\end{itemize}
+%Dahllöf 2013
+%\begin{itemize}
+%\item analysis of personal traits (sociolinguistics)
+%\item binary classification of politician's speeches: gender, age, political affiliation
+%\item Swedish parliament speeches from 2003 to 2010
+%\item use SVM
+%\item feature vectors indicating presence or absence of words
+%\end{itemize}
+%Sim 2013
+%\begin{itemize}
+%\item ideology positions of politicians expressed in political texts
+%\item using ideology lexicon
+%\end{itemize}
+%Lowe 2011
+%\begin{itemize}
+%\item political texts most often used for identification of political positions p. 124
+%\item automatic approaches usually by statistical analysis of word patterns p. 124
+%\item usually to estimate political affiliation from left to right scale
+%\item used to compare similarities and dissimilarities between parties over time
+%\item "In this article we present a new method for scaling continuous left-right policy positions from political text coded into discrete categories" p. 125
+%\item Assumptions: "first, the sentence is the fundamental unit of policy assertion; second, different sentences assigned to the same category are exchangeable or indepen- dently distributed conditional on their policy category; third, the total number of sentences assigned to any policy category contains no information about the policy preferences that a platform expresses."
+%\item content analysis
+%\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Data}
+% 0.5 pages
+
+For this study, German political speeches from the 13th to 17th legislative period of German \textit{Bundestag} were analysed.
+The speeches held between February 8th, 1996 and September 3rd, 2013 were extracted from 985 protocols obtained from the \textit{PolMine-Plenardebattenkorpus} (PDK) by \textcite[][]{???}, which contains protocols from German parliaments on state and federal level. These protocols also contain information on audience comments during speeches, which were excluded for this study. Also, administrative remarks, such as the appointment of the next speaker or voting summarize, are annotated as separate speeches. These passages of moderation were excluded from the data set, too, be removing all speeches from the respective \textit{Bundestags(-Vize)Präsident(-in)}. This reduced the amount of speeches in the data set from 215,061 to 120,331.
+
+The PDK contains meta information on each speaker's party, function, and name, as well as on each protocol's legislative period, protocol number, and protocol date. 
+Participation in the governing coalition was inferred by combining a speaker's party affiliation with the speech's legislative period and added as additional meta information.\footnote{The governing coalition of each legislative period was obtained from \url{https://de.wikipedia.org/wiki/Liste_der_deutschen_Bundesregierungen}.} For this, CDU and CSU were considered to be a single party as well as PDS and Linke, although PDS and Linke only merged in June 2007.
+
+%\begin{itemize}
+%%\item PolMine-Plenardebattenkorpus (PDK)
+%%\item alle Plenardebatten des Bundestags und der Landtage. S. 1
+%%\item 985 protocols (xml)
+%%\item extracted over speeches 250,000 plus information on speaker party, function, name, and speech date, legislative period, protocol number
+%%\item ignore speeches with less than 15 words: Rednerankündigungen
+%%\item from 215,061 to 136,464 speeches
+%%\item interfered government participation by legislative period and party 
+%%\item information on party and government opposition balance
+%
+%\item mostly formal language, as tend to be read from manuscripts, formal style
+%%\item removed remarks
+%%\item parties:
+%%\begin{itemize}
+%%\item FDP
+%%\item CDU (+ CSU)
+%%\item SPD
+%%\item Linke (+ PDS)
+%%\item Gruene
+%%\item unbekannt
+%%\item fraktions- und parteiloslos
+%%\end{itemize}
+%\end{itemize}
+
+%18: CDU/CSU, SPD
+%16: CDU/CSU, SPD
+%13: CDU/CSU, FDP
+%17: CDU/CSU, FDP
+%15: SPD, Grüne
+%14: SPD, Grüne
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Methods}\label{sec:methods}
+% 0.5 pages
+
+\begin{itemize}
+\item Government vs. Opposition
+\item Party affiliation
+\item (Multinomial) Logistic Regression
+\item Stratified 10-folds cross validation
+\item precision recall f1 score
+\item svm common choice for classification: dahllöf 2012
+\end{itemize}
+
+% Beispiel Bericht SVM:
+% The present study relies on the SVM implemen- tation of Joachims (1999), the SVMlight package (http://svmlight.joachims.org), version 6.02 (2008). A linear kernel and a biased hyperplane (the default setup) were used, as other options seemed to give lower accuracy rates.
+
+% The SVM, when applied to a vector, returns a real number. This is the value of the decision function, whose sign—positive or negative—repre- sents the classification verdict of the SVM. The ab- solute value represents the distance of the vector from the discriminating hyperplane.
+
+"The choice of the induction algorithm is not the object of study here. Previous studies have shown SVM (Schölkopf & Smola, 2002) to be a consistent top performer (e.g., Yang & Liu, 1999; Joachims, 1998; Dumais et al., 1998), and a pilot study comparing the use of the popular Naïve Bayes algorithm, logistic regression, and C4.5 decision trees confirmed its superiority. We use the default parameters and a linear kernel; later studies may wish to explore the interaction of feature selection and model tuning." forman 2003:1290
+
+\subsection{Features}
+
+For each classification experiment, two different types high-dimensional feature vectors were employed: first, a rather traditional word vector and second, a complexity vector. In order to keep the analysis feasible, each document was presented by averaged complexity and word vectors, instead of allowing for multidimensional matrices.
+
+\paragraph{GloVe}
+
+Koppel 2009:
+Each document is represented as a numerical vector each entry of which is the frequency of some linguistic feature in the document. In our experiment, we simply chose as features the 1000 most common words in the entire corpus. We did not use stemming since this process is time-consuming and preliminary tests indicated that it is not necessary for achieving good results. Note that the total number of unique words appearing in the corpus is in the tens of thousands; we chose only the most frequently occurring 1000 words since it is well established [4] that filtering in this way increases efficiency without degrading accuracy. The 1000 words we chose include both function words and content words. (see Forman 2003)
+
+\begin{itemize}
+\item WordVectors \url{http://nlp.stanford.edu/projects/glove/}
+\item Size
+\item Where from
+\end{itemize}
+
+\paragraph{Complexity Features}
+
+\begin{itemize}
+\item style-based analysis
+\item 218 features of linguistic complexity
+\item Descriptive features, Lexical, Syntactic, Morphological, coherence and cohesion, complex linguistic constructions
+\end{itemize}
+
+\subsection{Learning Algorithm}
+
+% http://scikit-learn.org/stable/modules/svm.html
+
+% http://www.statsoft.com/Textbook/Support-Vector-Machines
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experiment}\label{sec:exp}
+% 2 pages
+
+Dahllöf als Diskussions und Design Beispiel!
+
+\subsection{Results}
+
+\subsection{Discussion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+% 0.5 pages
+
+
+\printbibliography[heading=bibintoc]
+
+
+\end{document}
