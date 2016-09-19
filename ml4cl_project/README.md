@@ -7,7 +7,7 @@ Different complexity dimensions exhibit intriguing performance differences and g
 
 The directory is structures as follows:
 
-* **zweiss2016-ml4cl** is the paper Weiß 2015: "On the Applicability of Features of Linguistic Complexity to the Classification of Political Speeches".
+* **zweiss2016-ml4cl.pdf** is the paper Weiß 2015: "On the Applicability of Features of Linguistic Complexity to the Classification of Political Speeches".
 * **./python_scripts/** contains all Python scripts used for data preprocessing and machine learning analyses.
 * **./resources/** contains all further resources needed to repeat the experiment or links to them.
 
