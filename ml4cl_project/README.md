@@ -8,6 +8,7 @@ Different complexity dimensions exhibit intriguing performance differences and g
 The directory is structures as follows:
 
 * **zweiss2016-ml4cl.pdf** is the paper Weiß 2015: "On the Applicability of Features of Linguistic Complexity to the Classification of Political Speeches".
+* **bundesparser-complexity.csv.gz** contains the complexity table used for the experiment.
 * **./data-preprocessing/** contains the Python scripts used to extract plain text speeches from the PolMine corpus.
 * **./ml-analysis/** contains the Python scripts used for the machine learning analysis.
 
